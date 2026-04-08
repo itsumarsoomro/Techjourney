@@ -358,7 +358,6 @@
       <p><img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js"> Node.js</p>
       <p><img src="https://img.icons8.com/color/48/000000/graphql.png" alt="GraphQL"> GraphQL</p>
       <p><img src="https://img.icons8.com/?size=100&id=zrGYmJAiBY80&format=png&color=000000" alt="Rest"> RESTful API</p>
-      <p><img src="https://img.icons8.com/color/48/000000/sql.png" alt="SQL"> MS SQL</p>
     </div>
     <div>
       <h3>Frontend Development</h3>
@@ -417,6 +416,16 @@
   <br>
   <div class="projects-list">
     <div>
+      <h3>Leave Management System – Cambridge Judge Business School</h3>
+      <p>Redesigned and redeveloped a university-wide leave management platform, introducing a modern calendar-based interface and improving user experience, resulting in a 90% reduction in support tickets across the academic year.</p>
+      <p>Integrated Microsoft Graph API to automate notifications and streamline approval workflows, improving operational efficiency and reducing manual intervention.</p>
+    </div>
+    <div>
+      <h3>Termtime Data Pipeline – .NET Console Application</h3>
+      <p>Developed a scalable .NET console application to replace Azure Logic App workflows due to payload limitations (~50MB), integrating external TermTime APIs to perform ETL into SQL Server for systems used by students, staff, and contractors.</p>
+      <p>Implemented retry logic, structured logging, and real-time failure alerts, significantly reducing failure rates and improving reliability of high-volume data pipelines.</p>
+    </div>
+    <div>
       <h3>UNO</h3>
       <p>Contributed to migrating legacy applications to a new cloud-based architecture using Azure, improving system performance, scalability, and security.</p>
     </div>
@@ -448,10 +457,23 @@
   <br>
   <div class="experience-list">
     <div>
+      <h3>Systems Developer – Cambridge Judge Business School</h3>
+      <p><strong>April 2025 - Present</strong></p>
+      <p>Redesigned and redeveloped the leave management system, delivering a modern calendar-based platform and reducing support tickets by 90% across the academic year.</p>
+      <p>Engineered a scalable .NET-based data pipeline integrating external APIs for ETL into SQL Server, replacing Azure Logic Apps and significantly reducing failure rates while improving reliability of timetabling systems.</p>
+      <p>Provided 2nd and 3rd line support for critical university systems and developed internal tools for dynamic teams, improving issue resolution times and enhancing operational efficiency.</p>
+    </div>
+    <div>
       <h3>Senior Software Engineer – MNS Robotics</h3>
-      <p><strong>August 2024 - April 2025</strong></p>
+      <p><strong>Oct 2024 - April 2025</strong></p>
       <p>Leading development of a SaaS platform, reducing page load times by 25% and supporting multi-tenant clients using React.js, Next.js, and Azure.</p>
       <p>Spearheading back-end development with .NET and Azure SQL Database, improving data processing efficiency by 20%.</p>
+    </div> 
+     <div>
+      <h3>Full-stack Developer – ARMS Innovations ltf</h3>
+      <p><strong>August 2024 - Oct 2025</strong></p>
+      <p>Led development of a cloud-based SaaS platform, migrating from legacy VB.NET to React.js/Next.js, reducing page load times by 25% and improving user experience across multi-tenant clients.</p>
+      <p>Spearheaded backend development using .NET and Azure SQL, optimising data processing and system performance by 20%, while supporting scalable warehouse automation and dashboard systems.</p>
     </div>
     <div>
       <h3>Software Developer – savi UK</h3>
@@ -473,14 +495,11 @@
 </section>
 
 <section class="container contact">
-  <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+  <h2>
+    <i class="fas fa-envelope"></i> 
+    <a href="mailto:umarsoomro76@gmail.com">Contact Me</a>
+  </h2>
   <br>
-  <form id="contact-form" class="contact-form">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="email" id="email" placeholder="Your Email" required>
-    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message 📩</button>
-  </form>
 </section>
 
 <br>
@@ -489,56 +508,15 @@
   <p>&copy; 2024 M U F S. All Rights Reserved.</p>
 </footer>
 
-<script>
-  const toggleTheme = document.querySelector('.theme-toggle');
-  let isDarkMode = true;
-
-  toggleTheme.addEventListener('click', () => {
-    document.body.setAttribute('data-theme', isDarkMode ? 'light' : 'dark');
-    toggleTheme.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-    isDarkMode = !isDarkMode;
-  });
-</script>
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-  (function() {
-    emailjs.init("0d_3vttUPYBtI-vk9"); 
-  })();
-
-  let sendCount = 0;
-  const maxMessages = 2;
-
-  document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    if (sendCount >= maxMessages) {
-      alert("Message limit reached. Please try again later.");
-      return;
-    }
-
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      message: message
-    };
-
-    emailjs.send('service_rw8tnbk', 'template_21w0201', templateParams)
-      .then(function(response) {
-         console.log('SUCCESS!', response.status, response.text);
-         alert("Message sent successfully!");
-         sendCount++;
-      }, function(error) {
-         console.log('FAILED...', error);
-         alert("Failed to send the message. Please try again.");
-      });
-  });
-</script>
-
+  <script>
+    const toggleTheme = document.querySelector('.theme-toggle');
+    let isDarkMode = true;
+  
+    toggleTheme.addEventListener('click', () => {
+      document.body.setAttribute('data-theme', isDarkMode ? 'light' : 'dark');
+      toggleTheme.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      isDarkMode = !isDarkMode;
+    });
+  </script>
 </body>
 </html>
